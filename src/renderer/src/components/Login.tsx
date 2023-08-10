@@ -1,15 +1,22 @@
+import { useState } from 'react'
 import { Avatar, Button, TextField, Box, Container, Typography } from '@mui/material'
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined'
 import { Link } from 'react-router-dom'
 
 const Login = () => {
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    const data = new FormData(e.currentTarget)
-    console.log({
-      email: data.get('email'),
-      password: data.get('password')
-    })
+  const [emailValue, setEmailValue] = useState()
+  const [passwordValue, setPasswordValue] = useState()
+
+  const onChangeEmail = (e) => {
+    const value = e.target.value
+    setEmailValue(value)
+    console.log(`Email ${value}`)
+  }
+
+  const onChangePassword = (e) => {
+    const value = e.target.value
+    setPasswordValue(value)
+    console.log(`Senha ${value}`)
   }
 
   return (
@@ -28,7 +35,7 @@ const Login = () => {
         <Typography component="h1" variant="h5">
           Login
         </Typography>
-        <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+        <Box component="form" noValidate sx={{ mt: 1 }}>
           <TextField
             margin="normal"
             required
@@ -37,6 +44,8 @@ const Login = () => {
             label="Email Address"
             name="email"
             autoComplete="email"
+            onChange={onChangeEmail}
+            value={emailValue}
             autoFocus
           />
           <TextField
@@ -47,11 +56,12 @@ const Login = () => {
             label="Password"
             type="password"
             id="password"
+            onChange={onChangePassword}
+            value={passwordValue}
             autoComplete="current-password"
           />
           <Button
             onClick={(e) => e.preventDefault()}
-            href="/home"
             type="button"
             fullWidth
             variant="contained"
