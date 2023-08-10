@@ -6,9 +6,9 @@ function App(): JSX.Element {
     <Router>
       <Routes>
         <Route />
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Login />} />
         <Route path="*" element={<Navigate to="/" />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/home" element={<Home />} />
       </Routes>
     </Router>
   )
