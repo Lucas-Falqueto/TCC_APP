@@ -1,15 +1,5 @@
-import { Link } from 'react-router-dom'
-import classes from './styles.module.css'
-const Home = (): JSX.Element => {
-  console.log(window.api['getAlunos'])
-  return (
-    <>
-      <div>Hello world</div>
-      <Link to="/login" className={classes.btn}>
-        Logar
-      </Link>
-    </>
-  )
+const Home = () => {
+  return <div>Usuario Logado</div>
 }
 
 export default Home
