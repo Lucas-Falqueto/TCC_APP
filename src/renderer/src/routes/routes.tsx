@@ -1,5 +1,5 @@
-import Home from '../components/Home'
-import Login from '../components/Login'
+import Home from '../page/Home'
+import Login from '../page/Login'
 import { MemoryRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 function RoutesApp() {
   return (
