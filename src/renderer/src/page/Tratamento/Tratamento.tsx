@@ -7,7 +7,8 @@ import {
   IconButton,
   Badge,
   Container,
-  Grid
+  Grid,
+  Paper
 } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
@@ -17,7 +18,7 @@ import { Drawer } from '../../components/Drawer/Drawer'
 import { Link } from 'react-router-dom'
 
 // TODO remove, this demo shouldn't need to reset the theme.
-const Home = () => {
+export const Tratamento = () => {
   const [open, setOpen] = useState(true)
   const toggleDrawer = () => {
     setOpen(!open)
@@ -44,11 +45,11 @@ const Home = () => {
             <MenuIcon />
           </IconButton>
           <Typography component="h1" variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
-            Home_Test
+            Tratamento_Test
           </Typography>
           <IconButton color="inherit">
             <Badge color="secondary">
-              <Link to="/Tratamento" style={{ textDecoration: 'none', color: 'white' }}>
+              <Link to="/Home" style={{ textDecoration: 'none', color: 'white' }}>
                 <AccountCircleIcon />
               </Link>
             </Badge>
@@ -82,11 +83,38 @@ const Home = () => {
       >
         <Toolbar />
         <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-          <Grid container spacing={3}></Grid>
+          <Grid container spacing={3}>
+            {/* Chart */}
+            <Grid item xs={12} md={8} lg={9}>
+              <Paper
+                sx={{
+                  p: 2,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  height: 240
+                }}
+              ></Paper>
+            </Grid>
+            {/* Recent Deposits */}
+            <Grid item xs={12} md={4} lg={3}>
+              <Paper
+                sx={{
+                  p: 2,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  height: 240
+                }}
+              ></Paper>
+            </Grid>
+            {/* Recent Orders */}
+            <Grid item xs={12}>
+              <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}></Paper>
+            </Grid>
+          </Grid>
         </Container>
       </Box>
     </Box>
   )
 }
 
-export default Home
+export default Tratamento
