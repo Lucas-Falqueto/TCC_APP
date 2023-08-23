@@ -1,12 +1,7 @@
 import { useState } from 'react'
 import {
-  styled,
   createTheme,
-  ThemeProvider,
   CssBaseline,
-  AppBar as MuiAppBar,
-  AppBarProps as MuiAppBarProps,
-  Drawer as MuiDrawer,
   Box,
   Toolbar,
   Divider,
@@ -20,69 +15,18 @@ import {
 import MenuIcon from '@mui/icons-material/Menu'
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
-
-const drawerWidth = 240
-
-interface AppBarProps extends MuiAppBarProps {
-  open?: boolean
-}
-
-const AppBar = styled(MuiAppBar, {
-  shouldForwardProp: (prop) => prop !== 'open'
-})<AppBarProps>(({ theme, open }) => ({
-  zIndex: theme.zIndex.drawer + 1,
-  transition: theme.transitions.create(['width', 'margin'], {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen
-  }),
-  ...(open && {
-    marginLeft: drawerWidth,
-    width: `calc(100% - ${drawerWidth}px)`,
-    transition: theme.transitions.create(['width', 'margin'], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen
-    })
-  })
-}))
-
-const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
-  ({ theme, open }) => ({
-    '& .MuiDrawer-paper': {
-      position: 'relative',
-      whiteSpace: 'nowrap',
-      width: drawerWidth,
-      transition: theme.transitions.create('width', {
-        easing: theme.transitions.easing.sharp,
-        duration: theme.transitions.duration.enteringScreen
-      }),
-      boxSizing: 'border-box',
-      ...(!open && {
-        overflowX: 'hidden',
-        transition: theme.transitions.create('width', {
-          easing: theme.transitions.easing.sharp,
-          duration: theme.transitions.duration.leavingScreen
-        }),
-        width: theme.spacing(7),
-        [theme.breakpoints.up('sm')]: {
-          width: theme.spacing(9)
-        }
-      })
-    }
-  })
-)
+import {AppBar} from '../../components/AppBar/AppBar'
+import {Drawer} from '../../components/Drawer/Drawer'
 
 // TODO remove, this demo shouldn't need to reset the theme.
 const Home = () => {
-  const defaultTheme = createTheme()
   const [open, setOpen] = useState(true)
   const toggleDrawer = () => {
     setOpen(!open)
   }
-
+  
   return (
-    <ThemeProvider theme={defaultTheme}>
       <Box sx={{ display: 'flex' }}>
-        <CssBaseline />
         <AppBar position="absolute" open={open}>
           <Toolbar
             sx={{
@@ -169,7 +113,6 @@ const Home = () => {
           </Container>
         </Box>
       </Box>
-    </ThemeProvider>
   )
 }
 
