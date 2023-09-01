@@ -12,7 +12,7 @@ const Search = styled('div')(({ theme }) => ({
     backgroundColor: alpha(theme.palette.common.white, 0.25)
   },
   marginLeft: 0,
-  width: '100%',
+  width: '258px',
   [theme.breakpoints.up('sm')]: {
     marginLeft: theme.spacing(1),
     width: 'auto'
@@ -40,7 +40,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     [theme.breakpoints.up('sm')]: {
       width: '12',
       '&:focus': {
-        width: '20ch'
+        width: '300px'
       }
     }
   }
@@ -49,13 +49,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function SearchBar() {
   return (
     <Box sx={{ display: 'flex' }}>
-      <IconButton
-        size="small"
-        edge="start"
-        color="inherit"
-        aria-label="open drawer"
-        sx={{ mr: 2 }}
-      ></IconButton>
       <Search>
         <SearchIconWrapper>
           <SearchIcon />
