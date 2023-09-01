@@ -1,4 +1,5 @@
-import { Box, Toolbar } from '@mui/material'
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import { Avatar, Box, Toolbar } from '@mui/material'
 import { AppBar } from '../../components/AppBar/AppBar'
 import DrawerBar from '../../components/Drawer/DrawerBar'
 import SearchBar from '../../components/Search/SearchBar'
@@ -11,7 +12,12 @@ const Home = () => {
           <DrawerBar />
         </Box>
         <Box width="80%" display="flex" justifyContent="center">
-          <SearchBar />
+          <Box>
+            <SearchBar />
+          </Box>
+          <Box left={763} position="relative">
+            <Avatar>H</Avatar>
+          </Box>
         </Box>
       </Toolbar>
     </AppBar>
