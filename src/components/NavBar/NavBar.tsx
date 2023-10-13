@@ -15,9 +15,9 @@ const NavBar = () => {
 
   const menuList = ['Inicio', 'Cadastro Alunos'];
   const navBarOptions = ['Ficha', 'Anamnese', 'Tratamento', 'Historico'];
-  // useEffect1(() => {
-  //   console.log(history.location);
-  // }, []);
+  useEffect(() => {
+    console.log(history.location);
+  }, []);
   const handleDrawerClose = () => {
     setOpen(true);
   };
@@ -38,9 +38,12 @@ const NavBar = () => {
 
         break;
       case 'Cadastro Alunos':
-        history.push('/infoAlunos');
+        history.push('/cadastrarAluno');
         window.location.reload();
-
+        break;
+      case 'Ficha':
+        history.push('/infoAlunos/ficha');
+        window.location.reload();
         break;
     }
   };
@@ -76,7 +79,7 @@ const NavBar = () => {
             </IconButton>
           )}
         </Box>
-        {history.location.pathname === '/infoAlunos' ? (
+        {history.location.pathname !== '/home' ? (
           <Box display="flex" width="100%" alignItems="center" justifyContent="center">
             <List
               sx={{
@@ -119,7 +122,7 @@ const NavBar = () => {
         width="240px"
         height="calc(100vh - 50px)"
         position="absolute"
-        zIndex={1}
+        zIndex={100}
         bgcolor="#2c2c2c"
         display={!open ? { display: 'block' } : { display: 'none' }}
       >

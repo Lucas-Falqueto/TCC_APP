@@ -9,6 +9,7 @@ import Page404 from '../pages/404/Page404';
 // import Page404 from '../pages/404/page404';
 import Home from '../pages/Home/Home';
 import Login from '../pages/Login/Login';
+import RegisterStudent from '../pages/RegisterStudent/RegisterStudent';
 import CustomRoute from './CustomRoute';
 const RoutesApp = () => {
   const { authenticated, loading } = useContext(AuthContext);
@@ -24,7 +25,10 @@ const RoutesApp = () => {
         <CustomRoute exact path="/home" isPrivate={true}>
           <Home />
         </CustomRoute>
-        <CustomRoute exact path="/infoAlunos" isPrivate={true}>
+        <CustomRoute exact path="/cadastrarAluno" isPrivate={true}>
+          <RegisterStudent></RegisterStudent>
+        </CustomRoute>
+        <CustomRoute exact path="/infoAlunos/ficha" isPrivate={true}>
           Pagina OFF
         </CustomRoute>
         <Route path="*">
