@@ -8,6 +8,7 @@ import history from '../hooks/history';
 import Page404 from '../pages/404/Page404';
 // import Page404 from '../pages/404/page404';
 import Home from '../pages/Home/Home';
+import Ficha from '../pages/InfoStudent/Ficha/Ficha';
 import Login from '../pages/Login/Login';
 import RegisterStudent from '../pages/RegisterStudent/RegisterStudent';
 import CustomRoute from './CustomRoute';
@@ -29,7 +30,7 @@ const RoutesApp = () => {
           <RegisterStudent></RegisterStudent>
         </CustomRoute>
         <CustomRoute exact path="/infoAlunos/ficha" isPrivate={true}>
-          Pagina OFF
+          <Ficha />
         </CustomRoute>
         <Route path="*">
           {() => {

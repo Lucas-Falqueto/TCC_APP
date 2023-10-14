@@ -15,9 +15,9 @@ const NavBar = () => {
 
   const menuList = ['Inicio', 'Cadastro Alunos'];
   const navBarOptions = ['Ficha', 'Anamnese', 'Tratamento', 'Historico'];
-  useEffect(() => {
-    console.log(history.location);
-  }, []);
+  // useEffect(() => {
+  //   console.log(history.location);
+  // }, []);
   const handleDrawerClose = () => {
     setOpen(true);
   };
