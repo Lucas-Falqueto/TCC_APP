@@ -2,7 +2,7 @@ import { Box, Button, TextField } from '@mui/material';
 import axios from 'axios';
 import Cookies from 'js-cookie';
 import React, { useContext, useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Redirect, useNavigate } from 'react-router-dom';
 
 import { AuthContext } from '../../hooks/Context/AuthContext';
 
@@ -15,7 +15,7 @@ const Login = () => {
   const onClickLogin = async () => {
     if (email === '' || password === '') window.location.reload();
     handleLogin(email, password);
-    console.log(authenticated);
+    // console.log(authenticated);
   };
 
   const handleEmail = (e) => {
